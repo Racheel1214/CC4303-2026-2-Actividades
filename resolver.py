@@ -245,6 +245,8 @@ def iniciar_servidor():
 
         while True:
             data, client_address = server_socket.recvfrom(4096)
+            print("----------------------------------------------------")
+            print(f"Consulta recibida de {client_address}")
             respuesta_bytes = resolver(data)
             
             if respuesta_bytes:
