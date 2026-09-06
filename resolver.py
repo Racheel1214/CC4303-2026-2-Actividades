@@ -136,6 +136,7 @@ def print_dns_reply_elements(dnslib_reply):
     else:
         print("-> number_of_additional_elements = {}".format(number_of_additional_elements))
     print(">>----------------------------------------------<<\n")
+
 def resolver(mensaje_consulta: bytes, ip_addr = ROOT_IP, ns_name = ".", is_client_query = True) -> bytes:
     try:
         query_dns = DNSRecord.parse(mensaje_consulta)
@@ -145,6 +146,7 @@ def resolver(mensaje_consulta: bytes, ip_addr = ROOT_IP, ns_name = ".", is_clien
         return b""
 
     if is_client_query and ip_addr == ROOT_IP and ns_name == ".":
+        print_dns_reply_elements(query_dns)
         historial.append(qname)
         if len(historial) > 20:
             historial.pop(0)
