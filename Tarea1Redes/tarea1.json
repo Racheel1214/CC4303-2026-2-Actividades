@@ -1,0 +1,9 @@
+{
+  "user": "Francisca",
+  "blocked": ["http://cc4303.bachmann.cl/secret"],
+  "forbidden_words": [
+    {"proxy": "[REDACTED]"},
+    {"DCC": "[FORBIDDEN]"},
+    {"biblioteca": "[???]"}
+  ]
+}
