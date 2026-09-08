@@ -144,7 +144,7 @@ def handle_client(client_socket):
     blocked_clean = [b.rstrip("/") for b in blocked_clean]
     
     
-    if any(target == b or target.startswith(b + "/") for b in blocked_clean):
+    if any(host == b or target == b or target.startswith(b + "/") for b in blocked_clean):
         client_socket.sendall(build_forbidden_response())
         client_socket.close()
         return
